@@ -1,7 +1,7 @@
 # demo-cracy
 Solidity experiment on a decentralized voting system. By **NO** means a real world solution I just made it for funz. Probably if you look into my commits you will see how I leard from my mistakes and misunderstanding on Solidity, maybe someone can learn from my mistakes.
 
-###Some of the msitakes I made: 
+### Some of the msitakes I made: 
 
  - I tried to loop through a mapping. You can **NOT** do that, there are patterns to solve that but it's not a hashmap like in Java. Maybe someday we will have something like .hasNext() or maybe not.
  - I created getters for my public state variables. What happpens is that Solidity 'generates' aucomatically getters for public state variables, so you end up with duplicated getter for a state variable that later on you realized that it should've been a costant. 
