@@ -8,25 +8,18 @@ pragma solidity ^0.4.15;
 
 contract Law {
     string public name;
-    string description;
-    address creator;
-    
+    string public description;
+    address public creator;
+    uint public creationDate;
+    uint public closingDate; // Ending date of the voting period.
+    uint constant private VOTING_PERIOD = 7 days;
+
     function Law (string _name, string _description) public { 
         name = _name;
         description = _description;
         creator = msg.sender;
+        creationDate = now;
+        closingDate = now + VOTING_PERIOD;
     }
-    
-    function getName() public constant returns(string) {
-        return name;
-    }
-    
-    function getDescription() public constant returns(string) {
-        return description;
-    }
-    
-    function getCreator() public constant returns(address) {
-        return creator;
-    }
-    
+
 }
